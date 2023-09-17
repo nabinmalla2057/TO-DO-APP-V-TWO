@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-
 const app = express();
-const port = +process.env.PORT || 3000;
+
+const PORT = +process.env.PORT || 3000;
 const indexRouter = require("./routes");
 
 mongoose.connect(process.env.DB_URL).then(() => {
@@ -13,11 +13,12 @@ mongoose.connect(process.env.DB_URL).then(() => {
 app.use(express.json());
 
 app.use("/", indexRouter);
+
 app.use((err, res, req, next) => {
   err = err.toString() || "Something went wrong...";
   res.status(500).json({ data: "", msg: err });
 });
 
-app.listenerCount(port, () => {
-  console.log("App is running on port:", port);
+app.listen(PORT, () => {
+  console.log("App is running on port:", PORT);
 });

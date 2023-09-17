@@ -1,4 +1,4 @@
-const { Schema, moddel } = require("mongoose");
+const { Schema, moddel, model } = require("mongoose");
 const commonSchema = require("../../utilis/commonSchema");
 
 const TodoSchema = new Schema({
