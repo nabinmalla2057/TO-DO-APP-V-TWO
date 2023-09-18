@@ -26,7 +26,7 @@ router.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const { status, title } = req.body;
-    const result = await Controller.updateResource(id, { status, title });
+    const result = await Controller.updateStatus(id, { status, title });
     res.json({ data: result, msg: "success" });
   } catch (e) {
     next(e);
