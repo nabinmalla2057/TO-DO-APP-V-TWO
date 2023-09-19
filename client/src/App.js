@@ -1,8 +1,14 @@
+import Car from "./Car";
+
 function App() {
   // JS
 
   //HTML
-  return <div>Hello world</div>;
+  return (
+    <div>
+      <Car />
+    </div>
+  );
 }
 
 export default App;
