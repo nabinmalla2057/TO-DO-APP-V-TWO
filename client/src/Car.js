@@ -15,4 +15,12 @@ const Car = ({ wheel, color }) => {
   );
 };
 
+const Missed = ({ what }) => {
+  return <>{what} Missed</>;
+};
+
+const Goal = ({ what }) => {
+  return <>{what} Goal</>;
+};
+
 export default Car;
