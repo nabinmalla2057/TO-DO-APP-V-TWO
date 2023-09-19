@@ -1,26 +1,13 @@
-const Car = ({ wheel, color }) => {
-  const handleClick = (color) => {
-    alert(color);
-  };
-  return (
-    <>
-      I am a Car and i am {color} in color and i have {wheel} wheels <br />
-      <input type="text" id="newColor" />
-      <button
-        onClick={() => handleClick(document.getElementById("newColor").value)}
-      >
-        Click me
-      </button>
-    </>
-  );
+const Car = ({ what }) => {
+  return <>{what === "we" ? <Goal props={what} /> : <Missed />}</>;
 };
 
 const Missed = ({ what }) => {
-  return <>{what} Missed</>;
+  return <>Goal Missed</>;
 };
 
-const Goal = ({ what }) => {
-  return <>{what} Goal</>;
+const Goal = ({ props }) => {
+  return <>{props} Goaled...</>;
 };
 
 export default Car;
