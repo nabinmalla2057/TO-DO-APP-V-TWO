@@ -6,7 +6,7 @@ function App() {
   //HTML
   return (
     <div>
-      <Car />
+      <Car color="red" wheel={5} />
     </div>
   );
 }
